@@ -3,25 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Redirecting to Resume...</title>
     
+    <!-- SEO: Tells search engines the new page is the official one -->
     <link rel="canonical" href="https://1drv.ms/w/c/304662264743f676/Efop4kcKT7xKqK1pP1YaOBoBHh0cc5ATkH3jQSu3XtZ82A?e=mn1t9w" />
     
-    <meta http-equiv="refresh" content="1; url=https://1drv.ms/w/c/304662264743f676/Efop4kcKT7xKqK1pP1YaOBoBHh0cc5ATkH3jQSu3XtZ82A?e=mn1t9w" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- The actual redirect mechanism. "2" is the delay in seconds. -->
+    <meta http-equiv="refresh" content="2; url=https://1drv.ms/w/c/304662264743f676/Efop4kcKT7xKqK1pP1YaOBoBHh0cc5ATkH3jQSu3XtZ82A?e=mn1t9w" />
     
     <style>
+        /* General Body Styling */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #030712; /* A very dark blue/gray */
+            color: #f9fafb; /* Off-white */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
+        /* Main Content Wrapper */
+        .container {
+            width: 100%;
+            max-width: 28rem; /* 448px */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* The main card/box */
+        .card {
+            background-color: rgba(31, 41, 55, 0.5); /* bg-gray-800/50 */
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(55, 65, 81, 0.5); /* border-gray-700/50 */
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+            padding: 2rem 3rem;
+        }
+
+        /* Icon Styling */
+        .icon-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .icon {
+            height: 4rem; /* h-16 */
+            width: 4rem; /* w-16 */
+            color: #818cf8; /* text-indigo-400 */
+            margin: 0 auto;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Pulse Animation for the Icon */
         @keyframes pulse {
             0%, 100% {
                 opacity: 1;
@@ -32,49 +69,95 @@
                 transform: scale(1.05);
             }
         }
+
+        /* Typography */
+        h1 {
+            font-size: 2.25rem; /* text-4xl */
+            line-height: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            color: #d1d5db; /* text-gray-300 */
+            margin-bottom: 2rem;
+            font-size: 1.125rem; /* text-lg */
+        }
+
+        /* Countdown Timer Box */
+        .countdown-box {
+            background-color: rgba(3, 7, 18, 0.7); /* bg-gray-900/70 */
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid #374151; /* border-gray-700 */
+            color: #9ca3af; /* text-gray-400 */
+        }
+
+        #countdown {
+            font-weight: 700;
+            color: #f9fafb; /* text-white */
+            font-size: 1.25rem; /* text-xl */
+        }
+
+        /* Fallback Link Styling */
+        .fallback-text {
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.25rem;
+            color: #6b7280; /* text-gray-500 */
+        }
+
+        .fallback-link {
+            color: #818cf8; /* text-indigo-400 */
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .fallback-link:hover {
+            color: #a7a7ff; /* Lighter indigo */
+        }
         
-        .animate-pulse-custom {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        /* Footer Credit */
+        .footer-credit {
+            font-size: 0.75rem; /* text-xs */
+            color: #4b5563; /* text-gray-600 */
+            margin-top: 2rem;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+<body>
 
-    <div class="w-full max-w-md mx-auto text-center">
-        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl shadow-2xl p-8 md:p-12">
+    <div class="container">
+        <div class="card">
             
-            <!-- Icon -->
-            <div class="mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-400 mx-auto animate-pulse-custom" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
             </div>
             
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">
-                We're on the move!
-            </h1>
+            <h1>Taking you to my Resume</h1>
             
-            <p class="text-gray-300 mb-8 text-lg">
-                Please wait while we redirect you to our new home.
+            <p class="subtitle">
+                Please wait while you are redirected.
             </p>
             
-            <div class="bg-gray-900/70 rounded-lg p-4 mb-8 border border-gray-700">
-                <p class="text-gray-400">Redirecting in... <span id="countdown" class="font-bold text-white text-xl">2</span> seconds</p>
+            <div class="countdown-box">
+                <p>Redirecting in... <span id="countdown">2</span> seconds</p>
             </div>
 
-            <p class="text-sm text-gray-500">
-                Not working? <a href="https://1drv.ms/w/c/304662264743f676/Efop4kcKT7xKqK1pP1YaOBoBHh0cc5ATkH3jQSu3XtZ82A?e=mn1t9w" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">Click here to go manually</a>.
+            <p class="fallback-text">
+                Not working? <a href="https://1drv.ms/w/c/304662264743f676/Efop4kcKT7xKqK1pP1YaOBoBHh0cc5ATkH3jQSu3XtZ82A?e=mn1t9w" class="fallback-link">Click here to go manually</a>.
             </p>
         </div>
         
-        <!-- Footer credit -->
-        <p class="text-xs text-gray-600 mt-8">Powered by a sprinkle of magic</p>
     </div>
 
     <script>
-        // JavaScript for the countdown timer
+        // JavaScript for the countdown timer (no libraries needed)
         const countdownElement = document.getElementById('countdown');
-        let seconds = 2;
+        let seconds = 2; // Updated timeout
 
         const interval = setInterval(() => {
             seconds--;
