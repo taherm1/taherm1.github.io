@@ -3,172 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Resume...</title>
+    <title>Taher | Redirecting...</title>
     
-    <!-- SEO: Tells search engines the new page is the official one -->
-    <link rel="canonical" href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" />
+    <!-- Meta tags for better social sharing -->
+    <meta name="description" content="Redirecting to Taher's Resume">
     
-    <!-- The actual redirect mechanism. "2" is the delay in seconds. -->
-    <meta http-equiv="refresh" content="2; url=https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" />
-    
+    <!-- Redirect after 3 seconds as a fallback -->
+    <meta http-equiv="refresh" content="3; url=https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" />
+
     <style>
-        /* General Body Styling */
+        :root {
+            --primary: #f97316; /* Orange-500 */
+            --primary-glow: rgba(249, 115, 22, 0.2);
+            --bg-summer: #fff7ed; /* Orange-50 */
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-main: #1f2937; /* Gray-800 */
+            --text-muted: #6b7280; /* Gray-500 */
+            --border-color: rgba(249, 115, 22, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: #030712; /* A very dark blue/gray */
-            color: #f9fafb; /* Off-white */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-summer);
+            color: var(--text-main);
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 1rem;
+            overflow: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Main Content Wrapper */
+        /* Animated Mesh Gradient Background (Summer Vibes) */
+        .bg-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .glow-1 {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%);
+            filter: blur(80px);
+            animation: move-1 15s infinite alternate;
+        }
+
+        .glow-2 {
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(253, 224, 71, 0.3) 0%, transparent 70%); /* Yellow glow */
+            filter: blur(80px);
+            animation: move-2 20s infinite alternate;
+        }
+
+        @keyframes move-1 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30%, 20%); }
+        }
+
+        @keyframes move-2 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-20%, -30%); }
+        }
+
         .container {
-            width: 100%;
-            max-width: 28rem; /* 448px */
-            margin: 0 auto;
-            text-align: center;
+            width: 90%;
+            max-width: 440px;
+            z-index: 1;
         }
 
-        /* The main card/box */
         .card {
-            background-color: rgba(31, 41, 55, 0.5); /* bg-gray-800/50 */
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(55, 65, 81, 0.5); /* border-gray-700/50 */
-            border-radius: 1rem; /* rounded-2xl */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
-            padding: 2rem 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px -12px rgba(249, 115, 22, 0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
         }
 
-        /* Icon Styling */
-        .icon-container {
-            margin-bottom: 1.5rem;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(249, 115, 22, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
         }
 
-        .icon {
-            height: 4rem; /* h-16 */
-            width: 4rem; /* w-16 */
-            color: #818cf8; /* text-indigo-400 */
-            margin: 0 auto;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .logo-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
         }
 
-        /* Pulse Animation for the Icon */
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.05);
-            }
+        /* Circular Progress Indicator */
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-90deg);
         }
 
-        /* Typography */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.1s linear;
+            stroke-dasharray: 226.19; /* 2 * PI * 36 */
+            stroke-dashoffset: 226.19;
+            stroke: var(--primary);
+            stroke-width: 4;
+            fill: transparent;
+            stroke-linecap: round;
+        }
+
+        .progress-bg {
+            stroke: rgba(249, 115, 22, 0.05);
+            stroke-width: 4;
+            fill: transparent;
+        }
+
+        .logo-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
         h1 {
-            font-size: 2.25rem; /* text-4xl */
-            line-height: 2.5rem;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
 
-        .subtitle {
-            color: #d1d5db; /* text-gray-300 */
-            margin-bottom: 2rem;
-            font-size: 1.125rem; /* text-lg */
+        p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 32px;
         }
 
-        /* Countdown Timer Box */
-        .countdown-box {
-            background-color: rgba(3, 7, 18, 0.7); /* bg-gray-900/70 */
-            border-radius: 0.5rem; /* rounded-lg */
-            padding: 1rem;
-            margin-bottom: 2rem;
-            border: 1px solid #374151; /* border-gray-700 */
-            color: #9ca3af; /* text-gray-400 */
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
         }
 
-        #countdown {
-            font-weight: 700;
-            color: #f9fafb; /* text-white */
-            font-size: 1.25rem; /* text-xl */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
         }
 
-        /* Fallback Link Styling */
-        .fallback-text {
-            font-size: 0.875rem; /* text-sm */
-            line-height: 1.25rem;
-            color: #6b7280; /* text-gray-500 */
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 var(--primary-glow);
         }
 
-        .fallback-link {
-            color: #818cf8; /* text-indigo-400 */
-            font-weight: 500;
+        .btn-primary:hover {
+            background: #ea580c; /* Orange-600 */
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: rgba(249, 115, 22, 0.05);
+            color: var(--primary);
+            border: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer a {
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.2s;
+            font-weight: 500;
         }
 
-        .fallback-link:hover {
-            color: #a7a7ff; /* Lighter indigo */
+        .footer a:hover {
+            color: var(--primary);
         }
-        
-        /* Footer Credit */
-        .footer-credit {
-            font-size: 0.75rem; /* text-xs */
-            color: #4b5563; /* text-gray-600 */
-            margin-top: 2rem;
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 32px 20px;
+            }
+            .actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-glow">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
     <div class="container">
         <div class="card">
-            
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <div class="logo-container">
+                <svg class="progress-ring" width="80" height="80">
+                    <circle class="progress-bg" cx="40" cy="40" r="36" />
+                    <circle id="progress-circle" class="progress-ring__circle" cx="40" cy="40" r="36" />
                 </svg>
-            </div>
-            
-            <h1>Taking you to my Resume</h1>
-            
-            <p class="subtitle">
-                Please wait while you are redirected.
-            </p>
-            
-            <div class="countdown-box">
-                <p>Redirecting in... <span id="countdown">2</span> seconds</p>
+                <div class="logo-inner">T</div>
             </div>
 
-            <p class="fallback-text">
-                Not working? <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" class="fallback-link">Click here to go manually</a>.
-            </p>
+            <h1>Opening Resume</h1>
+            <p id="status-text">Redirecting you in <span id="timer">3</span> seconds...</p>
+
+            <div class="actions">
+                <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" class="btn btn-primary">Go Now</a>
+                <button id="cancel-btn" class="btn btn-secondary">Stop Redirect</button>
+            </div>
         </div>
-        
+
+        <div class="footer">
+            <a href="https://www.linkedin.com/in/taherm789/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
     </div>
 
     <script>
-        // JavaScript for the countdown timer (no libraries needed)
-        const countdownElement = document.getElementById('countdown');
-        let seconds = 2; // Updated timeout
+        const REDIRECT_URL = "https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B";
+        const DURATION = 3000; // 3 seconds
+        let timeLeft = DURATION;
+        const intervalTime = 50; // update every 50ms for smoothness
+        
+        const timerElement = document.getElementById('timer');
+        const progressCircle = document.getElementById('progress-circle');
+        const statusText = document.getElementById('status-text');
+        const cancelBtn = document.getElementById('cancel-btn');
+        
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+        
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
 
-        const interval = setInterval(() => {
-            seconds--;
-            if (countdownElement) {
-                countdownElement.textContent = seconds;
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100 * circumference);
+            progressCircle.style.strokeDashoffset = offset;
+        }
+
+        const timer = setInterval(() => {
+            timeLeft -= intervalTime;
+            const percent = ((DURATION - timeLeft) / DURATION) * 100;
+            setProgress(percent);
+            
+            const seconds = Math.ceil(timeLeft / 1000);
+            if (timerElement) timerElement.textContent = seconds;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = REDIRECT_URL;
             }
-            if (seconds <= 0) {
-                clearInterval(interval);
-            }
-        }, 1000);
+        }, intervalTime);
+
+        cancelBtn.addEventListener('click', () => {
+            clearInterval(timer);
+            statusText.textContent = "Redirect cancelled. Feel free to browse links below.";
+            progressCircle.style.stroke = "#d1d5db"; // gray out the progress
+            cancelBtn.style.display = "none";
+        });
     </script>
-
 </body>
 </html>
