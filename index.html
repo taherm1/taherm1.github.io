@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taher | Redirecting...</title>
     
-    <!-- Meta tags for better social sharing -->
-    <meta name="description" content="Redirecting to Taher's Resume">
+    <!-- Meta tags for SEO & Social Sharing -->
+    <meta name="description" content="Redirecting to Taher's Resume. Discover professional experience, skills, and portfolio.">
+    <meta name="theme-color" content="#FDFBF7">
     
-    <!-- Redirect after 3 seconds as a fallback -->
-    <meta http-equiv="refresh" content="3; url=https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" />
+    <!-- Redirect after 3 seconds as a fallback for users with JS disabled -->
+    <noscript>
+        <meta http-equiv="refresh" content="3; url=./resume.html" />
+    </noscript>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #f97316; /* Orange-500 */
-            --primary-glow: rgba(249, 115, 22, 0.2);
-            --bg-summer: #fff7ed; /* Orange-50 */
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --text-main: #1f2937; /* Gray-800 */
-            --text-muted: #6b7280; /* Gray-500 */
-            --border-color: rgba(249, 115, 22, 0.1);
+            --primary: #A04F4F; /* Rich Rosewood */
+            --primary-rgb: 160, 79, 79;
+            --secondary: #D4A290; /* Soft Peach Copper */
+            --secondary-rgb: 212, 162, 144;
+            --bg-espresso: #FDFBF7; /* Creamy Champagne Pearl */
+            --card-bg: rgba(255, 255, 255, 0.75); /* Frosted White Champagne Glass */
+            --card-border: rgba(160, 79, 79, 0.14);
+            --text-main: #362222; /* Deep Mahogany Charcoal-Brown */
+            --text-muted: #7C6565; /* Muted Warm Rosewood Sand */
+            --glow-glow: rgba(160, 79, 79, 0.08);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -29,8 +41,8 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-summer);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-espresso);
             color: var(--text-main);
             height: 100vh;
             display: flex;
@@ -38,9 +50,21 @@
             justify-content: center;
             overflow: hidden;
             -webkit-font-smoothing: antialiased;
+            perspective: 1000px;
         }
 
-        /* Animated Mesh Gradient Background (Summer Vibes) */
+        /* Interactive Particle Canvas */
+        #ember-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Animated Mesh Gradient Background (Rosewood & Champagne Vibes) */
         .bg-glow {
             position: absolute;
             top: 0;
@@ -49,73 +73,118 @@
             bottom: 0;
             z-index: -1;
             overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #F5F1E6 0%, var(--bg-espresso) 100%);
         }
 
-        .glow-1 {
+        .glow-orb {
             position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.45;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        .orb-1 {
             top: -10%;
             left: -10%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%);
-            filter: blur(80px);
-            animation: move-1 15s infinite alternate;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(160, 79, 79, 0.09) 0%, transparent 70%);
+            animation: move-orb-1 25s infinite alternate ease-in-out;
         }
 
-        .glow-2 {
-            position: absolute;
-            bottom: -10%;
-            right: -10%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(253, 224, 71, 0.3) 0%, transparent 70%); /* Yellow glow */
-            filter: blur(80px);
-            animation: move-2 20s infinite alternate;
+        .orb-2 {
+            bottom: -15%;
+            right: -15%;
+            width: 65vw;
+            height: 65vw;
+            background: radial-gradient(circle, rgba(212, 162, 144, 0.08) 0%, transparent 70%);
+            animation: move-orb-2 30s infinite alternate ease-in-out;
         }
 
-        @keyframes move-1 {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30%, 20%); }
+        .orb-3 {
+            top: 30%;
+            left: 30%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(238, 221, 191, 0.12) 0%, transparent 75%);
+            animation: move-orb-3 20s infinite alternate ease-in-out;
         }
 
-        @keyframes move-2 {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-20%, -30%); }
+        @keyframes move-orb-1 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(15%, 10%) scale(1.1); }
+        }
+
+        @keyframes move-orb-2 {
+            0% { transform: translate(0, 0) scale(1.1); }
+            100% { transform: translate(-10%, -15%) scale(0.9); }
+        }
+
+        @keyframes move-orb-3 {
+            0% { transform: translate(-10%, 10%) scale(0.9); }
+            100% { transform: translate(15%, -10%) scale(1.15); }
         }
 
         .container {
             width: 90%;
-            max-width: 440px;
+            max-width: 450px;
             z-index: 1;
         }
 
+        /* 3D Glassmorphic Card */
         .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.65); /* More translucent luxurious glass */
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Crisp glass edge */
+            border-radius: 28px;
+            padding: 44px 40px;
             text-align: center;
-            box-shadow: 0 20px 40px -12px rgba(249, 115, 22, 0.1);
-            transform: translateY(0);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 50px -10px rgba(54, 34, 34, 0.06),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.05);
+            transform-style: preserve-3d;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cursor Glow Effect inside Card */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 200px at var(--mouse-x, -50%) var(--mouse-y, -50%), rgba(160, 79, 79, 0.06), transparent);
+            z-index: 0;
+            pointer-events: none;
+            transition: background 0.15s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(249, 115, 22, 0.3);
-            box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
+            border-color: rgba(160, 79, 79, 0.25);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 30px 60px -15px rgba(54, 34, 34, 0.08),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.1);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            transform: translateZ(30px); /* 3D depth */
         }
 
         .logo-container {
             position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 28px;
+            transform-style: preserve-3d;
         }
 
-        /* Circular Progress Indicator */
+        /* Circular Progress Indicator with glowing dropshadow */
         .progress-ring {
             position: absolute;
             top: 0;
@@ -124,18 +193,18 @@
         }
 
         .progress-ring__circle {
-            transition: stroke-dashoffset 0.1s linear;
-            stroke-dasharray: 226.19; /* 2 * PI * 36 */
-            stroke-dashoffset: 226.19;
-            stroke: var(--primary);
-            stroke-width: 4;
+            transition: stroke 0.4s ease;
+            stroke-dasharray: 263.89; /* 2 * PI * 42 */
+            stroke-dashoffset: 263.89;
+            stroke: url(#ring-gradient);
+            stroke-width: 4.5;
             fill: transparent;
             stroke-linecap: round;
         }
 
         .progress-bg {
-            stroke: rgba(249, 115, 22, 0.05);
-            stroke-width: 4;
+            stroke: rgba(160, 79, 79, 0.04);
+            stroke-width: 4.5;
             fill: transparent;
         }
 
@@ -143,87 +212,173 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(249, 115, 22, 0.1);
+            transform: translate(-50%, -50%) translateZ(10px);
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(253, 251, 247, 0.9));
+            border: 1px solid rgba(160, 79, 79, 0.2);
+            box-shadow: 0 10px 20px -5px rgba(54, 34, 34, 0.06),
+                        inset 0 0 12px rgba(160, 79, 79, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 24px;
             color: var(--primary);
+            transition: var(--transition-smooth);
+            animation: pulse-logo 2.5s infinite alternate ease-in-out;
+        }
+
+        .logo-inner svg {
+            transition: transform 0.4s ease;
+        }
+
+        .logo-container:hover .logo-inner {
+            border-color: rgba(160, 79, 79, 0.5);
+            color: var(--secondary);
+            box-shadow: 0 12px 24px -6px rgba(160, 79, 79, 0.15),
+                        inset 0 0 16px rgba(160, 79, 79, 0.15);
+        }
+
+        .logo-container:hover .logo-inner svg {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @keyframes pulse-logo {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -50%) scale(1.05); }
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 26px;
+            font-weight: 800;
             margin-bottom: 12px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             color: var(--text-main);
+            background: linear-gradient(135deg, var(--text-main) 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        p {
+        p.status-text {
             color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            font-weight: 400;
+            transition: var(--transition-smooth);
+        }
+
+        p.status-text span#timer {
+            font-weight: 700;
+            color: var(--primary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Action Buttons */
+        .actions-wrapper {
+            position: relative;
+            width: 100%;
         }
 
         .actions {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             justify-content: center;
+            transition: var(--transition-smooth);
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 14px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
             border: none;
             outline: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 var(--primary-glow);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #FAF7F2;
+            box-shadow: 0 6px 20px 0 rgba(160, 79, 79, 0.15);
+            flex: 1.2;
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
         }
 
         .btn-primary:hover {
-            background: #ea580c; /* Orange-600 */
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px 0 rgba(160, 79, 79, 0.25);
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .btn-secondary {
-            background: rgba(249, 115, 22, 0.05);
+            background: rgba(160, 79, 79, 0.04);
             color: var(--primary);
-            border: 1px solid rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(160, 79, 79, 0.14);
+            flex: 1;
         }
 
         .btn-secondary:hover {
-            background: rgba(249, 115, 22, 0.1);
+            background: rgba(160, 79, 79, 0.08);
+            border-color: rgba(160, 79, 79, 0.25);
+            transform: translateY(-1px);
         }
 
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        /* Card cancelled modifier styling */
+        .card.cancelled #cancel-btn {
+            display: none;
+        }
+
+        .card.cancelled #go-btn {
+            flex: 1;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        /* Minimal Footer Badge */
         .footer {
-            margin-top: 32px;
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateZ(10px);
             font-size: 13px;
             color: var(--text-muted);
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 24px;
+            letter-spacing: 0.02em;
         }
 
         .footer a {
             color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .footer a:hover {
@@ -232,10 +387,11 @@
 
         @media (max-width: 480px) {
             .card {
-                padding: 32px 20px;
+                padding: 40px 24px;
             }
             .actions {
                 flex-direction: column;
+                gap: 10px;
             }
             .btn {
                 width: 100%;
@@ -245,44 +401,86 @@
 </head>
 <body>
 
+    <!-- Particle System Canvas -->
+    <canvas id="ember-canvas"></canvas>
+
+    <!-- Mesh Gradients Background -->
     <div class="bg-glow">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
     </div>
 
     <div class="container">
-        <div class="card">
-            <div class="logo-container">
-                <svg class="progress-ring" width="80" height="80">
-                    <circle class="progress-bg" cx="40" cy="40" r="36" />
-                    <circle id="progress-circle" class="progress-ring__circle" cx="40" cy="40" r="36" />
-                </svg>
-                <div class="logo-inner">T</div>
+        <div class="card" id="redirect-card">
+            <div class="card-content">
+                <div class="logo-container">
+                    <svg class="progress-ring" width="96" height="96">
+                        <defs>
+                            <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A04F4F" />
+                                <stop offset="100%" stop-color="#D4A290" />
+                            </linearGradient>
+                            <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <circle class="progress-bg" cx="48" cy="48" r="42" />
+                        <circle id="progress-circle" class="progress-ring__circle" cx="48" cy="48" r="42" filter="url(#glow-filter)" />
+                    </svg>
+                    <div class="logo-inner">
+                        <!-- Elegant minimal resume icon -->
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <h1 id="title-text">Opening Resume</h1>
+                <p id="status-text" class="status-text">Redirecting you in <span id="timer">3</span> seconds...</p>
+
+                <div class="actions-wrapper">
+                    <!-- Action Buttons -->
+                    <div class="actions" id="actions-group">
+                        <a href="./resume.html" class="btn btn-primary" id="go-btn">
+                            <span>Go Now</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <button id="cancel-btn" class="btn btn-secondary">Hold On</button>
+                    </div>
+
+
+                </div>
             </div>
+            
 
-            <h1>Opening Resume</h1>
-            <p id="status-text">Redirecting you in <span id="timer">3</span> seconds...</p>
-
-            <div class="actions">
-                <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" class="btn btn-primary">Go Now</a>
-                <button id="cancel-btn" class="btn btn-secondary">Stop Redirect</button>
-            </div>
-        </div>
-
-        <div class="footer">
-            <a href="https://www.linkedin.com/in/taherm789/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </div>
 
+    <!-- Small Footer -->
+    <div class="footer">
+        <span>Taher M &bull; Personal Portfolio</span>
+    </div>
+
     <script>
-        const REDIRECT_URL = "https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B";
+        const REDIRECT_URL = "./resume.html";
         const DURATION = 3000; // 3 seconds
         let timeLeft = DURATION;
-        const intervalTime = 50; // update every 50ms for smoothness
+        const intervalTime = 16; // ~60fps for hyper-smooth countdown
         
+        const card = document.getElementById('redirect-card');
         const timerElement = document.getElementById('timer');
         const progressCircle = document.getElementById('progress-circle');
         const statusText = document.getElementById('status-text');
+        const titleText = document.getElementById('title-text');
         const cancelBtn = document.getElementById('cancel-btn');
         
         const radius = progressCircle.r.baseVal.value;
@@ -296,12 +494,13 @@
             progressCircle.style.strokeDashoffset = offset;
         }
 
+        // Countdown timer execution
         const timer = setInterval(() => {
             timeLeft -= intervalTime;
             const percent = ((DURATION - timeLeft) / DURATION) * 100;
             setProgress(percent);
             
-            const seconds = Math.ceil(timeLeft / 1000);
+            const seconds = Math.max(0, Math.ceil(timeLeft / 1000));
             if (timerElement) timerElement.textContent = seconds;
 
             if (timeLeft <= 0) {
@@ -310,11 +509,164 @@
             }
         }, intervalTime);
 
+        // Cancel event listener
         cancelBtn.addEventListener('click', () => {
             clearInterval(timer);
-            statusText.textContent = "Redirect cancelled. Feel free to browse links below.";
-            progressCircle.style.stroke = "#d1d5db"; // gray out the progress
-            cancelBtn.style.display = "none";
+            
+            // Add cancelled state classes and text shifts
+            card.classList.add('cancelled');
+            titleText.textContent = "Halted Redirect";
+            statusText.textContent = "The automatic redirect has been cancelled. Click 'Go Now' to view the resume.";
+            
+            // Softly change progress circle styling to warm rosewood-grey
+            progressCircle.style.stroke = "rgba(160, 79, 79, 0.2)";
+        });
+
+
+
+        // ==========================================
+        // 1. High Performance Bonfire Embers System
+        // ==========================================
+        const canvas = document.getElementById('ember-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const mouse = { x: null, y: null, active: false };
+
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', setCanvasSize);
+        setCanvasSize();
+
+        // Listen for mouse coordinates for repulsion
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.active = true;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.active = false;
+        });
+
+        class Particle {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(init = false) {
+                this.x = Math.random() * canvas.width;
+                this.y = init ? Math.random() * canvas.height : canvas.height + 20;
+                this.size = Math.random() * 2.8 + 0.8;
+                this.baseSpeedY = -(Math.random() * 0.8 + 0.4);
+                this.baseSpeedX = Math.random() * 0.4 - 0.2;
+                this.vy = this.baseSpeedY;
+                this.vx = this.baseSpeedX;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.hue = Math.random() * 25 + 350; // Rosewood & Soft Peach sparks (350 to 15)
+                this.flickerSpeed = Math.random() * 0.015 + 0.003;
+                this.angle = Math.random() * Math.PI * 2;
+                this.angleSpeed = Math.random() * 0.02 - 0.01;
+            }
+
+            update() {
+                // Swaying horizontal motion
+                this.angle += this.angleSpeed;
+                this.x += Math.sin(this.angle) * 0.15 + this.vx;
+                this.y += this.vy;
+
+                // Mouse interaction: repulsion force
+                if (mouse.active) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < 120) {
+                        const force = (120 - dist) / 120;
+                        const angle = Math.atan2(dy, dx);
+                        
+                        // Push away gently
+                        this.vx += Math.cos(angle) * force * 1.5;
+                        this.vy += Math.sin(angle) * force * 1.5;
+                    }
+                }
+
+                // Decay the mouse velocity impulse back to base float
+                this.vx *= 0.95;
+                this.vy *= 0.95;
+                this.vx += (this.baseSpeedX - this.vx) * 0.05;
+                this.vy += (this.baseSpeedY - this.vy) * 0.05;
+
+                // Flicker opacity
+                this.opacity -= this.flickerSpeed;
+
+                // Recycle if off-screen top or faded out
+                if (this.y < -10 || this.opacity <= 0 || this.x < -10 || this.x > canvas.width + 10) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${this.hue}, 45%, 62%, ${this.opacity})`;
+                
+                // Add soft glowing effect to particles
+                ctx.shadowBlur = this.size * 2;
+                ctx.shadowColor = `hsla(${this.hue}, 45%, 55%, ${this.opacity})`;
+                
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Initialize particles
+        const particleCount = Math.min(60, Math.floor(window.innerWidth / 20));
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // ==========================================
+        // 2. Interactive Card 3D Tilt & Glass Glow
+        // ==========================================
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Update custom property for glow position
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            // Compute tilts
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const dx = x - xc;
+            const dy = y - yc;
+            
+            // Limit to max 8 degree tilt for elegant micro-movement
+            const tiltX = -(dy / yc) * 8;
+            const tiltY = (dx / xc) * 8;
+
+            card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-5px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--mouse-x', `-50%`);
+            card.style.setProperty('--mouse-y', `-50%`);
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
         });
     </script>
 </body>

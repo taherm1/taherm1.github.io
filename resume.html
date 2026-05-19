@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taher | Redirecting...</title>
+    <title>Taher M Malubhaiwala | Resume & Portfolio</title>
     
-    <!-- Meta tags for better social sharing -->
-    <meta name="description" content="Redirecting to Taher's Resume">
-    
-    <!-- Redirect after 3 seconds as a fallback -->
-    <meta http-equiv="refresh" content="3; url=https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" />
+    <!-- Meta tags for SEO & Social Sharing -->
+    <meta name="description" content="Resume of Taher M Malubhaiwala, Solution Engineering Team Lead & Software Developer. 6+ years experience in Python, Javascript, AI, Blockchain, and cloud infrastructure.">
+    <meta name="theme-color" content="#FDFBF7">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #f97316; /* Orange-500 */
-            --primary-glow: rgba(249, 115, 22, 0.2);
-            --bg-summer: #fff7ed; /* Orange-50 */
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --text-main: #1f2937; /* Gray-800 */
-            --text-muted: #6b7280; /* Gray-500 */
-            --border-color: rgba(249, 115, 22, 0.1);
+            --primary: #A04F4F; /* Rich Rosewood */
+            --primary-rgb: 160, 79, 79;
+            --secondary: #D4A290; /* Soft Peach Copper */
+            --secondary-rgb: 212, 162, 144;
+            --bg-espresso: #FDFBF7; /* Creamy Champagne Pearl */
+            --card-bg: rgba(255, 255, 255, 0.75); /* Frosted White Champagne Glass */
+            --card-border: rgba(160, 79, 79, 0.14);
+            --text-main: #362222; /* Deep Mahogany Charcoal-Brown */
+            --text-muted: #7C6565; /* Muted Warm Rosewood Sand */
+            --text-gold: #A04F4F; /* Highlight rosewood */
+            --glow-glow: rgba(160, 79, 79, 0.08);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -29,293 +37,1202 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-summer);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-espresso);
             color: var(--text-main);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
             -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
         }
 
-        /* Animated Mesh Gradient Background (Summer Vibes) */
+        /* Interactive Particle Canvas */
+        #ember-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Animated Mesh Gradient Background */
         .bg-glow {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: -1;
             overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #F5F1E6 0%, var(--bg-espresso) 100%);
         }
 
-        .glow-1 {
+        .glow-orb {
             position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.45;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        .orb-1 {
             top: -10%;
             left: -10%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%);
-            filter: blur(80px);
-            animation: move-1 15s infinite alternate;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(160, 79, 79, 0.09) 0%, transparent 70%);
+            animation: move-orb-1 25s infinite alternate ease-in-out;
         }
 
-        .glow-2 {
-            position: absolute;
-            bottom: -10%;
-            right: -10%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(253, 224, 71, 0.3) 0%, transparent 70%); /* Yellow glow */
-            filter: blur(80px);
-            animation: move-2 20s infinite alternate;
+        .orb-2 {
+            bottom: -15%;
+            right: -15%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(212, 162, 144, 0.08) 0%, transparent 70%);
+            animation: move-orb-2 30s infinite alternate ease-in-out;
         }
 
-        @keyframes move-1 {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30%, 20%); }
+        @keyframes move-orb-1 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(15%, 10%) scale(1.1); }
         }
 
-        @keyframes move-2 {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-20%, -30%); }
+        @keyframes move-orb-2 {
+            0% { transform: translate(0, 0) scale(1.1); }
+            100% { transform: translate(-10%, -15%) scale(0.9); }
         }
 
-        .container {
-            width: 90%;
-            max-width: 440px;
+        /* Layout Grid Container */
+        .layout-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 48px;
+            position: relative;
             z-index: 1;
         }
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
+        /* ==========================
+           1. LEFT SIDEBAR STYLES
+           ========================== */
+        .sidebar {
+            position: sticky;
+            top: 60px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.65); /* Luxurious translucent glass */
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Crisp bright glass edge */
             border-radius: 24px;
-            padding: 40px;
+            padding: 36px 28px;
             text-align: center;
-            box-shadow: 0 20px 40px -12px rgba(249, 115, 22, 0.1);
-            transform: translateY(0);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px -10px rgba(54, 34, 34, 0.05),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.05);
+            transition: var(--transition-smooth);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(249, 115, 22, 0.3);
-            box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
+        .profile-card:hover {
+            border-color: rgba(160, 79, 79, 0.25);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 25px 50px -10px rgba(160, 79, 79, 0.08),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.1);
         }
 
-        .logo-container {
-            position: relative;
-            width: 80px;
-            height: 80px;
+        .avatar-container {
+            width: 110px;
+            height: 110px;
             margin: 0 auto 24px;
-        }
-
-        /* Circular Progress Indicator */
-        .progress-ring {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: rotate(-90deg);
-        }
-
-        .progress-ring__circle {
-            transition: stroke-dashoffset 0.1s linear;
-            stroke-dasharray: 226.19; /* 2 * PI * 36 */
-            stroke-dashoffset: 226.19;
-            stroke: var(--primary);
-            stroke-width: 4;
-            fill: transparent;
-            stroke-linecap: round;
-        }
-
-        .progress-bg {
-            stroke: rgba(249, 115, 22, 0.05);
-            stroke-width: 4;
-            fill: transparent;
-        }
-
-        .logo-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(249, 115, 22, 0.1);
+            background: linear-gradient(135deg, rgba(160, 79, 79, 0.08), rgba(212, 162, 144, 0.04));
+            border: 1px solid rgba(160, 79, 79, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 24px;
+            font-size: 40px;
+            font-weight: 800;
             color: var(--primary);
+            box-shadow: 0 10px 25px -5px rgba(54, 34, 34, 0.08),
+                        inset 0 0 15px rgba(160, 79, 79, 0.08);
+            position: relative;
         }
 
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .avatar-container::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0.4;
+            animation: rotate-avatar-ring 8s infinite linear;
+        }
+
+        @keyframes rotate-avatar-ring {
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-name {
+            font-size: 22px;
+            font-weight: 800;
             letter-spacing: -0.02em;
-            color: var(--text-main);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary) 20%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        p {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 32px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-            outline: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 var(--primary-glow);
-        }
-
-        .btn-primary:hover {
-            background: #ea580c; /* Orange-600 */
-            transform: scale(1.02);
-        }
-
-        .btn-secondary {
-            background: rgba(249, 115, 22, 0.05);
+        .profile-title {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
             color: var(--primary);
-            border: 1px solid rgba(249, 115, 22, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 6px 14px;
+            background: rgba(160, 79, 79, 0.05);
+            border: 1px solid rgba(160, 79, 79, 0.14);
+            border-radius: 30px;
+            margin-bottom: 12px;
         }
 
-        .btn-secondary:hover {
-            background: rgba(249, 115, 22, 0.1);
-        }
-
-        .footer {
-            margin-top: 32px;
+        .profile-experience {
             font-size: 13px;
             color: var(--text-muted);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
             font-weight: 500;
         }
 
-        .footer a:hover {
+        /* Contact Details Badges */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .contact-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(160, 79, 79, 0.08);
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .contact-badge svg {
+            color: var(--primary);
+            opacity: 0.8;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-badge span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .contact-badge:hover {
+            border-color: rgba(160, 79, 79, 0.2);
+            background: rgba(160, 79, 79, 0.04);
+            transform: translateX(4px);
+        }
+
+        .contact-badge:hover svg {
+            transform: scale(1.15);
+        }
+
+        /* Copy Contact Toast (Floating) */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: var(--primary);
+            color: #FAF7F2;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(160, 79, 79, 0.15);
+            z-index: 100;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Sidebar Action Buttons */
+        .sidebar-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #FAF7F2;
+            box-shadow: 0 6px 20px rgba(160, 79, 79, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(160, 79, 79, 0.25);
+        }
+
+        .btn-secondary {
+            background: rgba(160, 79, 79, 0.04);
+            color: var(--primary);
+            border: 1px solid rgba(160, 79, 79, 0.14);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(160, 79, 79, 0.08);
+            border-color: rgba(160, 79, 79, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================
+           2. MAIN PANEL STYLES
+           ========================== */
+        .main-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.65); /* Luxurious translucent glass */
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Crisp glass edge */
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px -10px rgba(54, 34, 34, 0.04),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .section-card:hover {
+            border-color: rgba(160, 79, 79, 0.25);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 25px 50px -10px rgba(160, 79, 79, 0.06),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+                        inset 0 -1px 0 0 rgba(160, 79, 79, 0.1);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(160, 79, 79, 0.08);
+            padding-bottom: 12px;
+        }
+
+        .section-title svg {
             color: var(--primary);
         }
 
-        @media (max-width: 480px) {
-            .card {
-                padding: 32px 20px;
+        /* Summary section blockquote */
+        .summary-text {
+            color: var(--text-main);
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Skills Tags Grids */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .skill-group-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(160, 79, 79, 0.08);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            user-select: none;
+        }
+
+        .skill-tag:hover {
+            border-color: rgba(160, 79, 79, 0.35);
+            background: rgba(160, 79, 79, 0.08);
+            color: var(--primary);
+            transform: scale(1.05) translateY(-1px);
+            box-shadow: 0 8px 16px -4px rgba(160, 79, 79, 0.1);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background: linear-gradient(to bottom, var(--primary) 0%, rgba(160, 79, 79, 0.05) 100%);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 8px;
+            left: -28px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg-espresso);
+            box-shadow: 0 0 10px rgba(160, 79, 79, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .role-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .company-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .duration-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(160, 79, 79, 0.03);
+            border: 1px solid rgba(160, 79, 79, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .timeline-body ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-body li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .timeline-body li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            top: -1px;
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Highlighted Patent / Project Cards */
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(253, 251, 247, 0.8) 100%);
+            border: 1px solid rgba(160, 79, 79, 0.16);
+            box-shadow: 0 15px 30px rgba(54, 34, 34, 0.04),
+                        inset 0 0 15px rgba(160, 79, 79, 0.03);
+            border-radius: 18px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-card:hover {
+            border-color: rgba(160, 79, 79, 0.3);
+            box-shadow: 0 20px 40px rgba(160, 79, 79, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(160, 79, 79, 0.05);
+            border: 1px solid rgba(160, 79, 79, 0.15);
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .highlight-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            padding-right: 100px; /* Space for badge */
+        }
+
+        .highlight-sub {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .highlight-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Project card external link hover */
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 14px;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--secondary);
+        }
+
+        .project-link svg {
+            transition: transform 0.3s;
+        }
+
+        .project-link:hover svg {
+            transform: translate(2px, -2px);
+        }
+
+        /* Education & Grid details */
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .edu-degree {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .edu-school {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .edu-grade {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(160, 79, 79, 0.05);
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-top: 6px;
+            display: inline-block;
+        }
+
+        /* Certs & Awards Row */
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .compact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(160, 79, 79, 0.08);
+            border-radius: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .compact-item:hover {
+            border-color: rgba(160, 79, 79, 0.25);
+            background: rgba(160, 79, 79, 0.04);
+        }
+
+        .compact-icon {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .compact-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .compact-sub {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .compact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .compact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 900px) {
+            .layout-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 16px;
             }
-            .actions {
-                flex-direction: column;
-            }
-            .btn {
+            .sidebar {
+                position: static;
                 width: 100%;
+            }
+            .profile-card {
+                padding: 36px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-two-col {
+                grid-template-columns: 1fr;
+            }
+            .section-card {
+                padding: 30px 20px;
+            }
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .duration-badge {
+                align-self: flex-start;
+            }
+            .highlight-title {
+                padding-right: 0;
+                margin-top: 20px;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Particle System Background -->
+    <canvas id="ember-canvas"></canvas>
+
+    <!-- Swirling Glow Background -->
     <div class="bg-glow">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <div class="logo-container">
-                <svg class="progress-ring" width="80" height="80">
-                    <circle class="progress-bg" cx="40" cy="40" r="36" />
-                    <circle id="progress-circle" class="progress-ring__circle" cx="40" cy="40" r="36" />
-                </svg>
-                <div class="logo-inner">T</div>
+    <!-- Main Content Container -->
+    <div class="layout-wrapper">
+        
+        <!-- ==========================================
+             1. LEFT COLUMN: PROFILE SIDEBAR
+             ========================================== -->
+        <div class="sidebar">
+            <div class="profile-card">
+                <div class="avatar-container">T</div>
+                
+                <h1 class="profile-name">Taher M Malubhaiwala</h1>
+                <div class="profile-title">Team Lead</div>
+                <div class="profile-experience">6+ Years Professional Experience</div>
+
+                <!-- Contact capsules -->
+                <div class="contact-list">
+                    <button class="contact-badge" id="email-badge" title="Click to copy email">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span id="email-text">taherm789@gmail.com</span>
+                    </button>
+                    <div class="contact-badge">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Indore, M.P., India</span>
+                    </div>
+                </div>
             </div>
 
-            <h1>Opening Resume</h1>
-            <p id="status-text">Redirecting you in <span id="timer">3</span> seconds...</p>
-
-            <div class="actions">
-                <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" class="btn btn-primary">Go Now</a>
-                <button id="cancel-btn" class="btn btn-secondary">Stop Redirect</button>
+            <!-- Action buttons in sidebar -->
+            <div class="sidebar-actions">
+                <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Get PDF Resume</span>
+                </a>
+                <a href="./index.html" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Back to Splash</span>
+                </a>
             </div>
         </div>
 
-        <div class="footer">
-            <a href="https://www.linkedin.com/in/taherm789/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- ==========================================
+             2. RIGHT COLUMN: MAIN CONTENT PANELS
+             ========================================== -->
+        <div class="main-panel">
+            
+            <!-- SECTION 1: SUMMARY -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Summary</span>
+                </h2>
+                <p class="summary-text">
+                    Software Developer adept in bringing forth expertise in design, implementation, and maintenance of high-performance software. Proficient in a variety of platforms and languages. Able to effectively self-manage during independent projects, as well as collaborate in a team setting developing a strong working rapport with others.
+                </p>
+            </div>
+
+            <!-- SECTION 2: SKILLS -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>Professional Skills</span>
+                </h2>
+                <div class="skills-container">
+                    <div>
+                        <div class="skill-group-title">Languages & Frameworks</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML / CSS</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Django Rest Framework (DRF)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-title">Databases & Caching</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">NoSQL</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-title">Cloud Infrastructure</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS (Amazon Web Services)</span>
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-title">Data Engineering & Devops</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Apache Airflow</span>
+                            <span class="skill-tag">Apache Kafka</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">ETL Data Pipelines</span>
+                            <span class="skill-tag">Ansible</span>
+                            <span class="skill-tag">Tailscale</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Git Version Control</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Sentry / Rollbar</span>
+                            <span class="skill-tag">YOLO (Object Detection)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: WORK EXPERIENCE -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span>Work History</span>
+                </h2>
+                <div class="timeline">
+                    <!-- Job 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="role-title">Team Lead – Solution Engineering Dept</h3>
+                                <span class="company-name">Visbi / Innovatics &bull; Ahmedabad, India</span>
+                            </div>
+                            <span class="duration-badge">Sep 2022 – Present</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Lead a team of 5 developers building an AI-powered CCTV video analytics system capable of ingesting multiple feeds in real-time via RTSP.</li>
+                                <li>Designed and optimized robust real-time ETL processing pipelines leveraging RabbitMQ brokers.</li>
+                                <li>Created custom automated deployment tool using Ansible, Tailscale, and Django to push code updates and remote procedure invocations to port-blocked/secured machines from a central control console.</li>
+                                <li>Constructed scalable ETL pipelines capable of ingesting over 80 GB/hour of live blockchain market feeds into Google BigQuery.</li>
+                                <li>Augmented EML and MSG parsed email-to-PDF engine to completely support all complex media types.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="role-title">Software Engineer</h3>
+                                <span class="company-name">Systango &bull; Indore, India</span>
+                            </div>
+                            <span class="duration-badge">Jan 2020 – Jun 2022</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Developed a high-fidelity Ethereum scanner able to decode blocks, contract parameters, token transfers, transactions, and event logs from Ethereum and EVM chains.</li>
+                                <li>Refactored and optimized legacy Flask-based web services to support thousands of concurrent connections by designing custom caching strategies utilizing Redis.</li>
+                                <li>Acted as chief maintainer for the core API backend of a scaling communication platform engineered using Python, Django, and Django Rest Framework (DRF).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: PUBLISHED PATENT -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Patents & Innovation</span>
+                </h2>
+                <div class="highlight-card">
+                    <span class="highlight-badge">Published Patent</span>
+                    <h3 class="highlight-title">Multi-Camera Person Tracking System</h3>
+                    <div class="highlight-sub">Visbi Smarttech &bull; Published Jan 2026</div>
+                    <p class="highlight-desc">
+                        <strong>Application No:</strong> 202521125490 <br><br>
+                        <strong>Title:</strong> Multi-Camera Person Tracking System Using Spatio-Temporal Gating and Trust-Based Identity Management in Low Frame-Rate Environments. <br><br>
+                        <strong>Status:</strong> Published; Application Awaiting Examination. <br><br>
+                        Developed a novel computer vision system for consistent identity tracking across multiple CCTV camera feeds, specifically engineered to maintain identity accuracy in severe low-framerate constraints using trust-based spatio-temporal gating.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 5: FEATURED PROJECT -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Featured Independent Project</span>
+                </h2>
+                <div class="highlight-card">
+                    <span class="highlight-badge">500K+ Downloads</span>
+                    <h3 class="highlight-title">Rewire Companion</h3>
+                    <div class="highlight-sub">Founder &bull; 2015 – Present</div>
+                    <p class="highlight-desc">
+                        An Android mobile application with over half a million downloads built to support users in overcoming behavioral addictions. 
+                        Features a vibrant, real-time community forum and in-app message boards for mutual support and milestone tracking. <br><br>
+                        <strong>Tech Stack:</strong> Engineered using Java, Kotlin, and Node.js.
+                    </p>
+                    <a href="https://rewirecompanion.com" target="_blank" rel="noopener" class="project-link">
+                        <span>Visit rewirecompanion.com</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION 6: EDUCATION -->
+            <div class="section-card">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                    </svg>
+                    <span>Education Background</span>
+                </h2>
+                <div class="education-list">
+                    <div class="edu-item">
+                        <div>
+                            <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+                            <div class="edu-school">Manipal University, Jaipur</div>
+                        </div>
+                        <div>
+                            <span class="duration-badge">2023 – Apr 2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <div>
+                            <h3 class="edu-degree">Bachelor of Business Administration (BBA)</h3>
+                            <div class="edu-school">International Institute of Professional Studies - DAVV &bull; Indore</div>
+                        </div>
+                        <div>
+                            <span class="duration-badge">2014 – 2017</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div>
+                            <h3 class="edu-degree">SSC and HSC</h3>
+                            <div class="edu-school">The Daly College</div>
+                        </div>
+                        <div>
+                            <span class="duration-badge">2001 – 2013</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: CERTIFICATIONS & AWARDS -->
+            <div class="grid-two-col">
+                <!-- Certifications Card -->
+                <div class="section-card">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Credentials</span>
+                    </h2>
+                    <div class="compact-item">
+                        <svg class="compact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <div>
+                            <h4 class="compact-title">Problem Solving in C</h4>
+                            <div class="compact-sub">NPTEL (IIT - Kharagpur) &bull; Oct 2022</div>
+                            <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS101S4363032410172759" target="_blank" rel="noopener" class="compact-link">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards Card -->
+                <div class="section-card">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                        <span>Awards</span>
+                    </h2>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="compact-item">
+                            <svg class="compact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <div>
+                                <h4 class="compact-title">Best Client Centricity</h4>
+                                <div class="compact-sub">Innovatics &bull; Feb 2024</div>
+                            </div>
+                        </div>
+                        <div class="compact-item">
+                            <svg class="compact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <div>
+                                <h4 class="compact-title">Best Team Player</h4>
+                                <div class="compact-sub">Systango &bull; Nov 2020</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </div>
+
+    <!-- Contact Toast Toast -->
+    <div id="toast-notif" class="toast">Email Copied!</div>
 
     <script>
-        const REDIRECT_URL = "https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B";
-        const DURATION = 3000; // 3 seconds
-        let timeLeft = DURATION;
-        const intervalTime = 50; // update every 50ms for smoothness
-        
-        const timerElement = document.getElementById('timer');
-        const progressCircle = document.getElementById('progress-circle');
-        const statusText = document.getElementById('status-text');
-        const cancelBtn = document.getElementById('cancel-btn');
-        
-        const radius = progressCircle.r.baseVal.value;
-        const circumference = radius * 2 * Math.PI;
-        
-        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-        progressCircle.style.strokeDashoffset = circumference;
+        const emailBadge = document.getElementById('email-badge');
+        const emailText = document.getElementById('email-text').textContent;
+        const toastNotif = document.getElementById('toast-notif');
 
-        function setProgress(percent) {
-            const offset = circumference - (percent / 100 * circumference);
-            progressCircle.style.strokeDashoffset = offset;
+        // Copy contact details
+        emailBadge.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailText).then(() => {
+                toastNotif.classList.add('show');
+                setTimeout(() => {
+                    toastNotif.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error("Failed to copy contact: ", err);
+            });
+        });
+
+        // ==========================================
+        // 1. High Performance Bonfire Embers System
+        // ==========================================
+        const canvas = document.getElementById('ember-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const mouse = { x: null, y: null, active: false };
+
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', setCanvasSize);
+        setCanvasSize();
+
+        // Listen for mouse coordinates for repulsion
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.active = true;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.active = false;
+        });
+
+        class Particle {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(init = false) {
+                this.x = Math.random() * canvas.width;
+                this.y = init ? Math.random() * canvas.height : canvas.height + 20;
+                this.size = Math.random() * 2.8 + 0.8;
+                this.baseSpeedY = -(Math.random() * 0.8 + 0.4);
+                this.baseSpeedX = Math.random() * 0.4 - 0.2;
+                this.vy = this.baseSpeedY;
+                this.vx = this.baseSpeedX;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.hue = Math.random() * 25 + 350; // Rosewood & Soft Peach sparks (350 to 15)
+                this.flickerSpeed = Math.random() * 0.015 + 0.003;
+                this.angle = Math.random() * Math.PI * 2;
+                this.angleSpeed = Math.random() * 0.02 - 0.01;
+            }
+
+            update() {
+                this.angle += this.angleSpeed;
+                this.x += Math.sin(this.angle) * 0.15 + this.vx;
+                this.y += this.vy;
+
+                // Mouse interaction: repulsion force
+                if (mouse.active) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < 120) {
+                        const force = (120 - dist) / 120;
+                        const angle = Math.atan2(dy, dx);
+                        
+                        this.vx += Math.cos(angle) * force * 1.5;
+                        this.vy += Math.sin(angle) * force * 1.5;
+                    }
+                }
+
+                // Decay speeds
+                this.vx *= 0.95;
+                this.vy *= 0.95;
+                this.vx += (this.baseSpeedX - this.vx) * 0.05;
+                this.vy += (this.baseSpeedY - this.vy) * 0.05;
+
+                // Flicker
+                this.opacity -= this.flickerSpeed;
+
+                // Recycle if off-screen top or completely faded
+                if (this.y < -10 || this.opacity <= 0 || this.x < -10 || this.x > canvas.width + 10) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${this.hue}, 45%, 62%, ${this.opacity})`;
+                
+                // Add soft glow
+                ctx.shadowBlur = this.size * 2;
+                ctx.shadowColor = `hsla(${this.hue}, 45%, 55%, ${this.opacity})`;
+                
+                ctx.fill();
+                ctx.restore();
+            }
         }
 
-        const timer = setInterval(() => {
-            timeLeft -= intervalTime;
-            const percent = ((DURATION - timeLeft) / DURATION) * 100;
-            setProgress(percent);
-            
-            const seconds = Math.ceil(timeLeft / 1000);
-            if (timerElement) timerElement.textContent = seconds;
+        // Initialize particles
+        const particleCount = Math.min(80, Math.floor(window.innerWidth / 15));
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                window.location.href = REDIRECT_URL;
-            }
-        }, intervalTime);
-
-        cancelBtn.addEventListener('click', () => {
-            clearInterval(timer);
-            statusText.textContent = "Redirect cancelled. Feel free to browse links below.";
-            progressCircle.style.stroke = "#d1d5db"; // gray out the progress
-            cancelBtn.style.display = "none";
-        });
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
     </script>
 </body>
 </html>
