@@ -14,4 +14,5 @@ A polished, professional redirect page for my personal resume.
 - SEO optimized
 
 ## Links
+- [Resume](https://taherm.com/resume)
 - [LinkedIn](https://www.linkedin.com/in/taherm789/)

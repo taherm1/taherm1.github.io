@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taher M Malubhaiwala | Resume & Portfolio</title>
+    <title>Taher M. Malubhaiwala | Resume & Portfolio</title>
     
     <!-- Meta tags for SEO & Social Sharing -->
-    <meta name="description" content="Resume of Taher M Malubhaiwala, Solution Engineering Team Lead & Software Developer. 6+ years experience in Python, Javascript, AI, Blockchain, and cloud infrastructure.">
+    <meta name="description" content="Resume of Taher M. Malubhaiwala, Solution Engineering Team Lead & Software Developer. Total Experience: 6 years. Cyber Security, Python, Javascript, AI, Blockchain, and cloud infrastructure.">
     <meta name="theme-color" content="#FDFBF7">
 
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -217,6 +217,47 @@
             font-size: 13px;
             color: var(--text-muted);
             font-weight: 500;
+        }
+
+        .relocation-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1b5e20;
+            background: rgba(46, 125, 50, 0.08);
+            border: 1px solid rgba(46, 125, 50, 0.22);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #2e7d32;
+            box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+            animation: pulse-green 2s infinite;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(46, 125, 50, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+            }
         }
 
         /* Contact Details Badges */
@@ -647,10 +688,12 @@
             font-weight: 700;
             color: var(--primary);
             background: rgba(160, 79, 79, 0.05);
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 6px;
             margin-top: 6px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* Certs & Awards Row */
@@ -769,9 +812,13 @@
             <div class="profile-card">
                 <div class="avatar-container">T</div>
                 
-                <h1 class="profile-name">Taher M Malubhaiwala</h1>
+                <h1 class="profile-name">Taher M. Malubhaiwala</h1>
                 <div class="profile-title">Team Lead</div>
-                <div class="profile-experience">6+ Years Professional Experience</div>
+                <div class="profile-experience">Total Experience: 6 years</div>
+                <div class="relocation-pill" title="Relocation Availability">
+                    <span class="pulse-dot"></span>
+                    Open to Relocation
+                </div>
 
                 <!-- Contact capsules -->
                 <div class="contact-list">
@@ -782,19 +829,38 @@
                         </svg>
                         <span id="email-text">taherm789@gmail.com</span>
                     </button>
-                    <div class="contact-badge">
+                    <a href="tel:+353899426194" class="contact-badge" title="Call +353 899426194">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+353 899426194</span>
+                    </a>
+                    <div class="contact-badge" title="Location">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        <span>Indore, M.P., India</span>
+                        <span>Limerick, Ireland</span>
                     </div>
+                    <a href="https://www.linkedin.com/in/taherm789" target="_blank" rel="noopener" class="contact-badge" title="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                        <span>linkedin.com/in/taherm789</span>
+                    </a>
+                    <a href="https://taherm.com/resume" class="contact-badge" title="Latest Resume Link">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        <span>taherm.com/resume</span>
+                    </a>
                 </div>
             </div>
 
             <!-- Action buttons in sidebar -->
             <div class="sidebar-actions">
-                <a href="https://1drv.ms/b/c/304662264743f676/IQDy5r22K5bRRIRrJbrP0aPJAYLC8FFwz3I3n3w-V1-IN_g?e=5WLm4B" target="_blank" rel="noopener" class="btn btn-primary">
+                <a href="https://1drv.ms/b/c/304662264743f676/IQC_HCmj3R_gSaDcGGFWM2uuAXru5TeIeUFskusrtWOCL3A?e=4uaGZC" target="_blank" rel="noopener" class="btn btn-primary">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -911,9 +977,9 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="role-title">Team Lead – Solution Engineering Dept</h3>
-                                <span class="company-name">Visbi / Innovatics &bull; Ahmedabad, India</span>
+                                <span class="company-name">Visbi/Innovatics &bull; Ahmedabad, India</span>
                             </div>
-                            <span class="duration-badge">Sep 2022 – Present</span>
+                            <span class="duration-badge">Sep. 2022 – July. 2026</span>
                         </div>
                         <div class="timeline-body">
                             <ul>
@@ -1009,6 +1075,17 @@
                     <span>Education Background</span>
                 </h2>
                 <div class="education-list">
+                    <div class="edu-item">
+                        <div>
+                            <h3 class="edu-degree">MEng in Cyber Security</h3>
+                            <div class="edu-school">University of Limerick</div>
+                            <span class="edu-grade"><span class="pulse-dot"></span>Currently Pursuing</span>
+                        </div>
+                        <div>
+                            <span class="duration-badge">Sep. 2026 – 2027</span>
+                        </div>
+                    </div>
+
                     <div class="edu-item">
                         <div>
                             <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
